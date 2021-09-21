@@ -19,12 +19,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# @app.route('/', methods = ['POST'])
-# def predict():
+@app.route('/predict', methods = ['GET'])
+def predict():
 #     # imagefile = request.files['imagefile']
 #     # imagefile.save(image_path = "./images/" + imagefile.filename)
 #     # return render_template('index.html', prediction = classification)
-#     return jsonify({'result':1})
+    # return jsonify({'result':1})
+    return render_template('predict.html')
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
